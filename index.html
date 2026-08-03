@@ -848,12 +848,14 @@
   <!-- ====== HEADER ====== -->
   <div class="header">
     <h1>📋  دورات أصول 2 </h1>
-    <p>by : Mohamad Akram Kashmer </p>   
+    <p>by : Mohamad Akram Kashmer </p>
   </div>
   <!-- ====== NAV TABS ====== -->
   <div class="nav-container">
     <div class="nav-tabs">
-       
+       <button class="nav-tab nav-tab-special" onclick="showModel('notesSection', this)">
+  <span class="special-pin">📌</span> ملاحظات هامة
+</button>
       <button class="nav-tab" onclick="showModel('model7', this)">
         فصل اول <span class="tab-number">26</span>
       </button>
@@ -875,54 +877,179 @@
       <button class="nav-tab" onclick="showModel('model6', this)">
          فصل اول  <span class="tab-number">24</span>
       </button>
-      
-       
     </div>
   </div>
-
-
 <div id="notesSection" class="section">
   <div class="section-card notes-dark-card">
+    
+    <!-- رأس القسم -->
     <div class="section-header">
       <div class="section-icon notes-icon-special">📌</div>
-      <div>
-        <div class="section-title notes-title-glow">ملاحظات هامة</div>
-        <div class="section-subtitle">تنبيهات ونقاط جوهرية يجب مراجعتها قبل الامتحان</div>
-      </div>
+      <h2>ملاحظات هامة</h2>
     </div>
 
-    <div class="notes-content">
+    <!-- محتوى الملاحظات -->
+    <div class="section-body notes-content">
 
-      <div class="note-item note-danger">
-        <div class="note-item-header">
-          <span class="note-badge">⚠️ تنبيه</span>
-        </div>
-        <div class="note-item-body">
-          اكتب هنا نص الملاحظة الأولى...
-        </div>
-      </div>
-
-      <div class="note-item note-warning">
-        <div class="note-item-header">
-          <span class="note-badge">💡 مهم</span>
-        </div>
-        <div class="note-item-body">
-          اكتب هنا نص الملاحظة الثانية...
-        </div>
-      </div>
-
+      <!-- الملاحظة 1: الإجراءات الجوهرية لدورة الاستثمار -->
       <div class="note-item note-info">
         <div class="note-item-header">
           <span class="note-badge">📖 ملاحظة</span>
         </div>
         <div class="note-item-body">
-          اكتب هنا نص الملاحظة الثالثة...
+          <strong>الإجراءات الجوهرية في دورة الاستثمار (5 أهداف رئيسية):</strong><br><br>
+          تخيل أنك تدقق محفظة استثمارية لشركة، فأنت تحتاج للتأكد من 5 أشياء أساسية:<br>
+          <b>1️⃣ الوجود:</b> هل الاستثمارات المذكورة في الدفاتر موجودة فعلاً؟ (تتحقق من ذلك بالمصادقة مع شركات الوساطة).<br>
+          <b>2️⃣ الاكتمال:</b> هل كل الأنشطة الاستثمارية تم تسجيلها؟ (تفحص النفقات الكبيرة وتطابقها مع الوساطة).<br>
+          <b>3️⃣ الحقوق والالتزامات:</b> هل الشركة تملك هذه الاستثمارات فعلاً وليست مرهونة أو مملوكة لغيرها؟ (تفحص مستندات الحيازة).<br>
+          <b>4️⃣ التقويم والتخصيص:</b> هل القيمة المسجلة في القوائم المالية صحيحة بالسوق؟ خاصة أن أسعار الاستثمارات تتغير باستمرار.<br>
+          <b>5️⃣ العرض والإفصاح:</b> هل تم توضيح الغرض من الاستثمار (للبيع أو الاحتفاظ) والمخاطر المرتبطة به بشكل واضح للقارئ؟
         </div>
       </div>
 
-    </div>
-  </div>
-</div>
+      <!-- الملاحظة 2: المشتقات المالية -->
+      <div class="note-item note-warning">
+        <div class="note-item-header">
+          <span class="note-badge">💡 مهم</span>
+        </div>
+        <div class="note-item-body">
+          <strong>ما هي المشتقات المالية ولماذا تُستخدم؟</strong><br><br>
+          المشتقات هي عقود "تشتق" قيمتها من أصل آخر (مثل سعر سهم، أو سعر قطن، أو سعر عملة). 
+          مثال بسيط: <em>شركة نسيج تخشى ارتفاع سعر القطن مستقبلاً، فتشتري اليوم "عقد مستقبلي" يثبّت لها السعر الحالي.</em><br><br>
+          🎯 <b>الفكرة الأساسية:</b> الشركات تستخدمها "للتحوّط" أي لتقليل المخاطر الناتجة عن تقلب الأسعار، سواء كانت أسعار عملات، فوائد، أو سلع.<br>
+          ⚠️ يجب أن يهتم المدقق بمعرفة: هل الشركة تستخدمها فعلاً للتحوط أم للمضاربة (المقامرة على الأسعار)؟ لأن هذا يغيّر طريقة المحاسبة والإفصاح عنها تماماً.
+        </div>
+      </div>
+
+      <!-- الملاحظة 3: مخطط أهداف التدقيق المنهجية -->
+      <div class="note-item note-danger">
+        <div class="note-item-header">
+          <span class="note-badge">⚠️ تنبيه</span>
+        </div>
+        <div class="note-item-body">
+          <strong>مخطط أهداف التدقيق عبر 4 مراحل (مهم جداً للفهم المنهجي):</strong><br><br>
+          تخيل الأمر كأنه "مصفاة" تفحص العملية المالية من عدة زوايا:<br>
+          🔹 <b>المرحلة 1:</b> قضايا تتعلق بالأحداث والعمليات (هل الحدث حصل فعلاً؟ الحدوث - الحقوق والالتزامات - الاكتمال).<br>
+          🔹 <b>المرحلة 2:</b> قضايا تتعلق بالأرصدة المحاسبية (نفس المفاهيم لكن على مستوى الرصيد وليس العملية).<br>
+          🔹 <b>المرحلة 3:</b> قضايا تتعلق بالعرض والإفصاح (هل تم عرض المعلومة وشرحها بشكل صحيح؟).<br>
+          🔹 <b>المرحلة 4:</b> قضايا خاصة بهيئة الإشراف PCAOB (رقابة أعلى مستوى).<br><br>
+          💬 <b>لماذا هذا مهم؟</b> لأن الخطأ الواحد (مثل بيع وهمي) قد يمرّ من كل هذه المراحل دون اكتشافه إذا لم يتبع المدقق هذا التسلسل المنطقي!
+        </div>
+      </div>
+
+      <!-- الملاحظة 4: قضية سيتي بنك كمثال واقعي -->
+      <div class="note-item note-danger">
+        <div class="note-item-header">
+          <span class="note-badge">⚠️ تنبيه - حالة واقعية</span>
+        </div>
+        <div class="note-item-body">
+          <strong>قصة "شركة النسيج" ودرس عن الوجود والحدوث:</strong><br><br>
+          📌 <b>القصة:</b> شركة نسيج كانت تشتري القطن مسبقاً لتثبيت السعر (تحوّط مشروع). حدثت أزمة مالية فطلب البنك (سيتي بنك) قرضاً كبيراً، مما جعل الشركة تتوقع الإفلاس.<br><br>
+          🚨 <b>ماذا فعل مدير المبيعات؟</b> أصدر فواتير مبيعات وهمية (مزيفة) لبضاعة لم تُباع فعلياً! فقط لرفع الأرقام ظاهرياً وتضليل البنك.<br><br>
+          ✅ <b>الدرس المستفاد:</b> عندما تجد المخزون "ينخفض بشكل كبير نهاية العام" رغم عدم منطقية ذلك، اسأل فوراً: "هل حدثت المبيعات فعلاً؟" هذا هو اختبار <b>الحدوث</b> - أحد أهم أهداف التدقيق للتأكد أن العمليات المسجلة حقيقية وليست وهمية.
+        </div>
+      </div>
+
+      <!-- الملاحظة 5: الرقابة الداخلية SOX ورسائل الارتباط -->
+      <div class="note-item note-info">
+        <div class="note-item-header">
+          <span class="note-badge">📖 ملاحظة</span>
+        </div>
+        <div class="note-item-body">
+          <strong>رسالة الإدارة مقابل معايير SOX - ما الفرق؟</strong><br><br>
+          🔸 وفق معايير SOX (الأمريكية) على المدقق أن يبدي رأيه الشخصي عن الرقابة الداخلية في تقرير منشور وعلني.<br>
+          🔸 لكن وفق المعايير الدولية (IAASB) فإن "رسالة الإدارة" (Management Letter) ليست إلزامية، لكنها ممارسة جيدة تضيف قيمة (كأنها "هدية" من المدقق للعميل تحتوي على ملاحظات استشارية أو ضريبية).<br><br>
+          <b>جدول التواصل خلال التدقيق (احفظه جيداً):</b><br>
+          • رسالة الارتباط: من المدقق ← إلى العميل (قبل بدء العمل - خطية)<br>
+          • رسالة القبول: من العميل ← إلى المدقق (قبل الارتباط - خطية)<br>
+          • رسالة المحامين: من المدقق ← إلى محامي الشركة (قرب نهاية العمل)<br>
+          • كتاب تمثيل الإدارة: من العميل ← إلى المدقق (عند انتهاء التدقيق)
+        </div>
+      </div>
+
+      <!-- الملاحظة 6: أهداف تدقيق حسابات الدائنين -->
+      <div class="note-item note-warning">
+        <div class="note-item-header">
+          <span class="note-badge">💡 مهم</span>
+        </div>
+        <div class="note-item-body">
+          <strong>لماذا يهتم المدقق بالدائنين (الموردين) أكثر من المدينين؟</strong><br><br>
+          🎯 السبب بسيط: الشركات عادة "تميل للتخفيض" وليس التضخيم في حسابات الدائنين! لأن تقليل الالتزامات = أرباح أعلى ظاهرياً.<br><br>
+          لذلك تجد أن أهم اختبارات هذا الحساب هي:<br>
+          1. <b>الاكتمال:</b> هل تم تسجيل كل الالتزامات (حتى التي لم تصل فاتورتها بعد)؟ هذا هو الاختبار الأهم هنا (عكس المدينين الذي يركز على الوجود).<br>
+          2. <b>التوقيت:</b> هل سُجلت المشتريات في الفترة الصحيحة؟ (اختبار قطع الحسابات الزمني - Cut off).<br>
+          3. <b>البحث عن الالتزامات غير المسجلة:</b> عن طريق فحص المدفوعات بعد نهاية السنة المالية، لمعرفة إذا كانت تخص فترة سابقة لم تُسجل.
+        </div>
+      </div>
+
+      <!-- الملاحظة 7: الإجراءات التحليلية لاكتشاف التحريف -->
+      <div class="note-item note-info">
+        <div class="note-item-header">
+          <span class="note-badge">📖 ملاحظة</span>
+        </div>
+        <div class="note-item-body">
+          <strong>كيف تكتشف "التلاعب" في الدائنين والمصاريف بدون فحص كل فاتورة؟</strong><br><br>
+          ✨ الحل هو <b>الإجراءات التحليلية</b> - أي مقارنة الأرقام ببعضها لاكتشاف "الشذوذ":<br><br>
+          🔍 قارن مصاريف هذا العام بالعام الماضي → إذا انخفضت فجأة بدون سبب منطقي، فقد يكون هناك التزامات لم تُسجل!<br>
+          🔍 قارن نسبة الدائنين إلى المشتريات → إذا انخفضت النسبة بشكل غير طبيعي، فهذا مؤشر خطر.<br>
+          🔍 افحص الدائنين "غير العاديين" (الذين لا يمثلون موردين تجاريين) لأنهم عرضة أكثر للأخطاء أو الإخفاء.<br><br>
+          💡 <b>القاعدة الذهبية:</b> الرقم الذي "لا يتحرك بشكل منطقي" مع باقي الأرقام هو دائماً مثير للشك ويستحق التدقيق الإضافي!
+        </div>
+      </div>
+
+      <!-- الملاحظة 8: دورة المشتريات والمدفوعات -->
+      <div class="note-item note-warning">
+        <div class="note-item-header">
+          <span class="note-badge">💡 مهم</span>
+        </div>
+        <div class="note-item-body">
+          <strong>ربط أهداف التدقيق بالرقابة الداخلية الفعلية (المشتريات والمدفوعات):</strong><br><br>
+          هذا الجدول يربط بين "الهدف" و "نوع الرقابة" و"الاختبار الذي تقوم به":<br><br>
+          • <b>هدف الوجود:</b> تتأكد أن كل عملية شراء مسجلة تخص طلب شراء حقيقي ← الاختبار: تتبع من المستندات إلى ملف المشتريات الرئيسي.<br>
+          • <b>هدف الاكتمال:</b> تتأكد أن كل عملية شراء حدثت فعلاً تم تسجيلها ← الاختبار: تتبع عكسي (من المخزون الفعلي إلى السجلات).<br>
+          • <b>هدف الدقة:</b> الأرقام المسجلة مطابقة تماماً لفاتورة الشراء (الكمية × السعر) بدون أخطاء حسابية.<br>
+          • <b>هدف الفصل الزمني (Cut off):</b> العملية سُجلت في الفترة المحاسبية الصحيحة، ليس قبلها أو بعدها.<br><br>
+          🧠 <b>نصيحة:</b> لاحظ أن لكل هدف "رقابة داخلية" ينبغي أن تكون موجودة أولاً، ثم "اختبار تدقيق" يتأكد من فعاليتها.
+        </div>
+      </div>
+
+      <!-- الملاحظة 9: تمثيلات الإدارة -->
+      <div class="note-item note-danger">
+        <div class="note-item-header">
+          <span class="note-badge">⚠️ تنبيه</span>
+        </div>
+        <div class="note-item-body">
+          <strong>كتاب تمثيلات الإدارة (Management Representation) - آخر خط دفاع للمدقق:</strong><br><br>
+          📌 هذا كتاب توقعه الإدارة (المدير المالي والتنفيذي) في نهاية التدقيق، يقرّون فيه بمسؤوليتهم عن عدالة القوائم المالية وكفاية الرقابة الداخلية.<br><br>
+          🇺🇸 وفق قانون Sarbanes-Oxley (القسم 302) في أمريكا: هذا التوقيع إلزامي للشركات المدرجة في البورصة، وهو شهادة رسمية أمام الجهات الرقابية!<br><br>
+          ⚖️ <b>لماذا هو مهم قانونياً للمدقق؟</b> لأنه في حال حدوث دعوى قضائية لاحقاً (مثل قضايا الاحتيال)، يستطيع المدقق أن يقول: "الإدارة نفسها أقرّت كتابياً بصحة هذه المعلومات" - وهذا يحميه جزئياً من المسؤولية القانونية.<br><br>
+          💬 مثال إحصائي مذكور: من بين 126 دعوى قضائية ضد شركات مدرجة عام 2008، فشلت 54 دعوى منها والباقي (72) نجحت جزئياً أو كلياً - مما يوضح أهمية التوثيق الجيد!
+        </div>
+      </div>
+
+      <!-- الملاحظة 10: المصادقات والالتزامات العرضية -->
+      <div class="note-item note-info">
+        <div class="note-item-header">
+          <span class="note-badge">📖 ملاحظة</span>
+        </div>
+        <div class="note-item-body">
+          <strong>الفرق بين "الالتزام الفعلي" و"الالتزام العرضي" - ولماذا يهم المدقق؟</strong><br><br>
+          🔹 <b>الالتزام العرضي (Contingent Liability):</b> هو التزام "محتمل" غير مؤكد الحدوث، مثل قضية قضائية لم يصدر فيها حكم بعد. الشركة قد تخسر أو تربح القضية!<br><br>
+          🔹 لهذا يطلب المدقق <b>رسالة من محامي الشركة</b> يوضح فيها رأيه القانوني حول احتمالية خسارة كل قضية، لأن هذا يؤثر على ما إذا كان يجب:<br>
+          - الإفصاح فقط في الهوامش (احتمال بعيد).<br>
+          - أو تكوين مخصص مالي (احتمال مرجح وقابل للقياس).<br><br>
+          📝 <b>مسؤوليات كل طرف:</b><br>
+          - <b>العميل:</b> يطلب من محاميه تزويد المدقق بمعلومات القضايا.<br>
+          - <b>المحامي:</b> يرسل تقييماً مكتوباً حول الالتزامات والتقويمات المتوقعة.<br>
+          - <b>المدقق:</b> يسأل العميل مباشرة عن أي دعاوى أو التزامات أخرى لم تُذكر.
+        </div>
+      </div>
+
+    </div> <!-- إغلاق section-body -->
+  </div> <!-- إغلاق section-card -->
+</div> <!-- إغلاق section -->
+
+
 
   <!-- ====== CONTENT ====== -->
   <div class="content-wrapper">
@@ -3765,7 +3892,7 @@
 
     <!-- ===== 8 ===== -->
     <div class="qz-item">
-      <div class="qz-question"><span class="qz-num">8</span> أياً من أنشطة الرقابة التالية يمكن أن يساهم في تخفيض خطر دفع قيمة ذات قيمة مرتين:</div>
+      <div class="qz-question"><span class="qz-num">8</span> أياً من أنشطة الرقابة التالية يمكن أن يساهم في تخفيض خطر دفع قيمة ذات الشلراء مرتين:</div>
       <div class="qz-options">
         <div class="qz-option" data-correct="true" onclick="selectAnswer(this,true,this.closest('.qz-item'))">أ- فصل المهام بين طلب المواد واستلامها ودفع قيمتها</div>
         <div class="qz-option" data-correct="false" onclick="selectAnswer(this,false,this.closest('.qz-item'))">ب- مركزية عمليات الشراء ووجود موافقة واحدة عليها</div>
@@ -4246,121 +4373,28 @@
     // إدراج العداد في أعلى الصفحة كأول عنصر
     document.body.insertBefore(box, document.body.firstChild);
     
-    var now // ===== QUIZ LOGIC =====
-function selectAnswer(optionEl, isCorrect, itemEl) {
-  if (itemEl.classList.contains('answered')) return;
-
-  itemEl.classList.add('answered');
-
-  const options = itemEl.querySelectorAll('.qz-option');
-  options.forEach(opt => {
-    if (opt.dataset.correct === 'true') {
-      opt.classList.add('is-correct');
-    }
-  });
-
-  if (isCorrect) {
-    itemEl.classList.add('correct-answer');
-  } else {
-    itemEl.classList.add('wrong-answer');
-    optionEl.classList.add('is-wrong-selected');
-  }
-
-  updateScore(itemEl.closest('.section'));
-}
-
-function updateScore(sectionEl) {
-  const items = sectionEl.querySelectorAll('.qz-item');
-  const answered = sectionEl.querySelectorAll('.qz-item.answered');
-  const correct = sectionEl.querySelectorAll('.qz-item.correct-answer');
-  const wrong = sectionEl.querySelectorAll('.qz-item.wrong-answer');
-
-  const total = items.length;
-  const answeredCount = answered.length;
-  const correctCount = correct.length;
-  const wrongCount = wrong.length;
-  const remaining = total - answeredCount;
-
-  const totalEl = sectionEl.querySelector('.stat-total');
-  const correctEl = sectionEl.querySelector('.stat-correct');
-  const wrongEl = sectionEl.querySelector('.stat-wrong');
-  const remainingEl = sectionEl.querySelector('.stat-remaining');
-  const progressFill = sectionEl.querySelector('.score-progress-fill');
-
-  if (totalEl) totalEl.textContent = total;
-  if (correctEl) correctEl.textContent = correctCount;
-  if (wrongEl) wrongEl.textContent = wrongCount;
-  if (remainingEl) remainingEl.textContent = remaining;
-  if (progressFill) {
-    progressFill.style.width = (answeredCount / total * 100) + '%';
-  }
-
-  // ✅ إظهار النتيجة النهائية
-  if (answeredCount === total) {
-    showFinalResult(sectionEl, correctCount, total);
-  }
-}
-
-// ✅ الدالة المفقودة - أضفها!
-function showFinalResult(sectionEl, correctCount, total) {
-  // تحقق إذا كانت النتيجة ظهرت مسبقاً
-  if (sectionEl.querySelector('.final-result-box')) return;
-
-  const percentage = Math.round((correctCount / total) * 100);
-
-  // تحديد الرسالة واللون حسب النتيجة
-  let emoji, message, color;
-
-  if (percentage >= 90) {
-    emoji = '🏆'; message = 'ممتاز! أحسنت!'; color = '#4ade80';
-  } else if (percentage >= 75) {
-    emoji = '✅'; message = 'جيد جداً!'; color = '#60a5fa';
-  } else if (percentage >= 60) {
-    emoji = '👍'; message = 'جيد، يمكنك التحسين!'; color = '#facc15';
-  } else {
-    emoji = '📚'; message = 'تحتاج لمراجعة أكثر!'; color = '#f87171';
-  }
-
-  // إنشاء صندوق النتيجة
-  const resultBox = document.createElement('div');
-  resultBox.className = 'final-result-box';
-  resultBox.style.cssText = `
-    margin: 30px auto;
-    padding: 25px;
-    background: #0d1117;
-    border: 2px solid ${color};
-    border-radius: 16px;
-    text-align: center;
-    direction: rtl;
-    font-family: Arial, sans-serif;
-    max-width: 400px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    animation: fadeIn 0.5s ease;
-  `;
-
-  resultBox.innerHTML = `
-    <div style="font-size: 50px; margin-bottom: 10px;">${emoji}</div>
-    <div style="font-size: 22px; font-weight: bold; color: ${color}; margin-bottom: 8px;">
-      ${message}
-    </div>
-    <div style="font-size: 40px; font-weight: bold; color: white; margin: 10px 0;">
-      ${percentage}%
-    </div>
-    <div style="color: #8b949e; font-size: 14px;">
-      أجبت <span style="color:#4ade80; font-weight:bold;">${correctCount}</span> 
-      صح من أصل 
-      <span style="color:white; font-weight:bold;">${total}</span> سؤال
-      &nbsp;|&nbsp;
-      أخطأت <span style="color:#f87171; font-weight:bold;">${total - correctCount}</span>
-    </div>
-  `;
-
-  // إضافة النتيجة في نهاية القسم
-  sectionEl.appendChild(resultBox);
-
-  // التمرير للنتيجة
-  resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
+    var now = new Date();
+    var examDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 11, 30, 0);
+    var examTime = examDate.getTime();
+    
+    window.examInterval = setInterval(function(){
+        var current = new Date().getTime();
+        var distance = examTime - current;
+        var display = document.getElementById('examTimeDisplay');
+        
+        if(distance < 0){
+            clearInterval(window.examInterval);
+            if(display) display.innerHTML = '🎓';
+            return;
+        }
+        
+        var totalSeconds = Math.floor(distance / 1000);
+        
+        if(display){
+            display.innerHTML = totalSeconds.toLocaleString('en-US');
+        }
+    }, 1000);
+})();
   </script>
 
 </body>
