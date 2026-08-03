@@ -841,6 +841,36 @@
 
 }
 
+.final-result-box {
+  display: none;
+  background: #0d1117;
+  border: 2px solid #3fb950;
+  border-radius: 16px;
+  padding: 25px 15px;
+  text-align: center;
+  margin: 15px 0;
+  direction: rtl;
+  animation: fadeInResult 0.5s ease;
+}
+
+@keyframes fadeInResult {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.final-result-score {
+  font-size: 36px;
+  font-weight: bold;
+  color: #4ade80;
+  margin-bottom: 8px;
+}
+
+.final-result-message {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e6edf3;
+}
+
   </style>
 </head>
 <body>
@@ -4395,6 +4425,51 @@
         }
     }, 1000);
 })();
+
+function showFinalResult(sectionEl, correctCount, total) {
+  let resultBox = sectionEl.querySelector('.final-result-box');
+
+  // لو الصندوق مش موجود، ننشئه ونحطه في المكان الصح
+  if (!resultBox) {
+    resultBox = document.createElement('div');
+    resultBox.className = 'final-result-box';
+
+    // نحدد مكان إدراجه: بعد شريط التقدم (progress bar) مباشرة
+    const progressBar = sectionEl.querySelector('.score-progress-fill')?.closest('.score-progress-bar');
+
+    if (progressBar) {
+      progressBar.insertAdjacentElement('afterend', resultBox);
+    } else {
+      // لو مفيش progress bar، حطه فوق أول سؤال
+      const firstItem = sectionEl.querySelector('.qz-item');
+      if (firstItem) {
+        firstItem.parentNode.insertBefore(resultBox, firstItem);
+      } else {
+        sectionEl.appendChild(resultBox);
+      }
+    }
+  }
+
+  const percentage = Math.round((correctCount / total) * 100);
+  let message = '';
+
+  if (percentage >= 90) message = 'ممتاز جداً! 🏆';
+  else if (percentage >= 75) message = 'جيد جداً! 👏';
+  else if (percentage >= 50) message = 'لا بأس، تحتاج مراجعة 🙂';
+  else message = 'تحتاج لمزيد من المذاكرة 📚';
+
+  resultBox.innerHTML = `
+    <div class="final-result-score">
+      (${percentage}%) ${correctCount} / ${total}
+    </div>
+    <div class="final-result-message">${message}</div>
+  `;
+
+  resultBox.style.display = 'block';
+
+  // تمرير الصفحة للأعلى عشان يشوف النتيجة
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
   </script>
 
 </body>
