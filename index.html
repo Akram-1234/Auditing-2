@@ -4470,6 +4470,46 @@ function showFinalResult(sectionEl, correctCount, total) {
   // تمرير الصفحة للأعلى عشان يشوف النتيجة
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+      function resetQuiz(sectionEl) {
+  if (!sectionEl) {
+    console.error('❌ لم يتم تمرير section بشكل صحيح');
+    return;
+  }
+
+  const items = sectionEl.querySelectorAll('.qz-item');
+
+  if (items.length === 0) {
+    console.error('❌ لا توجد عناصر .qz-item داخل هذا القسم');
+    return;
+  }
+
+  items.forEach(item => {
+    item.classList.remove('answered', 'correct-answer', 'wrong-answer');
+
+    const options = item.querySelectorAll('.qz-option');
+    options.forEach(opt => {
+      opt.classList.remove('is-correct', 'is-wrong-selected');
+    });
+  });
+
+  // إخفاء صندوق النتيجة النهائية
+  const resultBox = sectionEl.querySelector('.final-result-box');
+  if (resultBox) {
+    resultBox.style.display = 'none';
+    resultBox.innerHTML = '';
+  }
+
+  // إعادة شريط التقدم للصفر
+  const progressFill = sectionEl.querySelector('.score-progress-fill');
+  if (progressFill) {
+    progressFill.style.width = '0%';
+  }
+
+  // تحديث الإحصائيات (كل, صحيح, خطأ, متبقي)
+  updateScore(sectionEl);
+
+  console.log('✅ تم إعادة تعيين الاختبار بنجاح');
+}
   </script>
 
 </body>
