@@ -4391,40 +4391,7 @@
       }
     }
 
-    javascript:(function(){
-    if(document.getElementById('examCountdownBox')){
-        document.getElementById('examCountdownBox').remove();
-    }
-    var box = document.createElement('div');
-    box.id = 'examCountdownBox';
-    box.style.cssText = 'display:block;margin:15px auto;padding:12px 20px;background:#0d1117;color:white;border-radius:12px;font-family:Arial;text-align:center;direction:rtl;border:2px solid #4ade80;max-width:300px;box-shadow:0 3px 15px rgba(74,222,128,0.2);';
-    box.innerHTML = '<div style="font-weight:bold;margin-bottom:5px;color:#4ade80;font-size:13px;">⏳ الوقت المتبقي للامتحان</div><div id="examTimeDisplay" style="font-size:24px;font-weight:bold;color:#4ade80;letter-spacing:1px;">0</div><div style="font-size:11px;margin-top:2px;color:#8b949e;">ثانية</div>';
     
-    // إدراج العداد في أعلى الصفحة كأول عنصر
-    document.body.insertBefore(box, document.body.firstChild);
-    
-    var now = new Date();
-    var examDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 11, 30, 0);
-    var examTime = examDate.getTime();
-    
-    window.examInterval = setInterval(function(){
-        var current = new Date().getTime();
-        var distance = examTime - current;
-        var display = document.getElementById('examTimeDisplay');
-        
-        if(distance < 0){
-            clearInterval(window.examInterval);
-            if(display) display.innerHTML = '🎓';
-            return;
-        }
-        
-        var totalSeconds = Math.floor(distance / 1000);
-        
-        if(display){
-            display.innerHTML = totalSeconds.toLocaleString('en-US');
-        }
-    }, 1000);
-})();
 
 function showFinalResult(sectionEl, correctCount, total) {
   let resultBox = sectionEl.querySelector('.final-result-box');
