@@ -4246,28 +4246,121 @@
     // إدراج العداد في أعلى الصفحة كأول عنصر
     document.body.insertBefore(box, document.body.firstChild);
     
-    var now = new Date();
-    var examDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 11, 30, 0);
-    var examTime = examDate.getTime();
-    
-    window.examInterval = setInterval(function(){
-        var current = new Date().getTime();
-        var distance = examTime - current;
-        var display = document.getElementById('examTimeDisplay');
-        
-        if(distance < 0){
-            clearInterval(window.examInterval);
-            if(display) display.innerHTML = '🎓';
-            return;
-        }
-        
-        var totalSeconds = Math.floor(distance / 1000);
-        
-        if(display){
-            display.innerHTML = totalSeconds.toLocaleString('en-US');
-        }
-    }, 1000);
-})();
+    var now // ===== QUIZ LOGIC =====
+function selectAnswer(optionEl, isCorrect, itemEl) {
+  if (itemEl.classList.contains('answered')) return;
+
+  itemEl.classList.add('answered');
+
+  const options = itemEl.querySelectorAll('.qz-option');
+  options.forEach(opt => {
+    if (opt.dataset.correct === 'true') {
+      opt.classList.add('is-correct');
+    }
+  });
+
+  if (isCorrect) {
+    itemEl.classList.add('correct-answer');
+  } else {
+    itemEl.classList.add('wrong-answer');
+    optionEl.classList.add('is-wrong-selected');
+  }
+
+  updateScore(itemEl.closest('.section'));
+}
+
+function updateScore(sectionEl) {
+  const items = sectionEl.querySelectorAll('.qz-item');
+  const answered = sectionEl.querySelectorAll('.qz-item.answered');
+  const correct = sectionEl.querySelectorAll('.qz-item.correct-answer');
+  const wrong = sectionEl.querySelectorAll('.qz-item.wrong-answer');
+
+  const total = items.length;
+  const answeredCount = answered.length;
+  const correctCount = correct.length;
+  const wrongCount = wrong.length;
+  const remaining = total - answeredCount;
+
+  const totalEl = sectionEl.querySelector('.stat-total');
+  const correctEl = sectionEl.querySelector('.stat-correct');
+  const wrongEl = sectionEl.querySelector('.stat-wrong');
+  const remainingEl = sectionEl.querySelector('.stat-remaining');
+  const progressFill = sectionEl.querySelector('.score-progress-fill');
+
+  if (totalEl) totalEl.textContent = total;
+  if (correctEl) correctEl.textContent = correctCount;
+  if (wrongEl) wrongEl.textContent = wrongCount;
+  if (remainingEl) remainingEl.textContent = remaining;
+  if (progressFill) {
+    progressFill.style.width = (answeredCount / total * 100) + '%';
+  }
+
+  // ✅ إظهار النتيجة النهائية
+  if (answeredCount === total) {
+    showFinalResult(sectionEl, correctCount, total);
+  }
+}
+
+// ✅ الدالة المفقودة - أضفها!
+function showFinalResult(sectionEl, correctCount, total) {
+  // تحقق إذا كانت النتيجة ظهرت مسبقاً
+  if (sectionEl.querySelector('.final-result-box')) return;
+
+  const percentage = Math.round((correctCount / total) * 100);
+
+  // تحديد الرسالة واللون حسب النتيجة
+  let emoji, message, color;
+
+  if (percentage >= 90) {
+    emoji = '🏆'; message = 'ممتاز! أحسنت!'; color = '#4ade80';
+  } else if (percentage >= 75) {
+    emoji = '✅'; message = 'جيد جداً!'; color = '#60a5fa';
+  } else if (percentage >= 60) {
+    emoji = '👍'; message = 'جيد، يمكنك التحسين!'; color = '#facc15';
+  } else {
+    emoji = '📚'; message = 'تحتاج لمراجعة أكثر!'; color = '#f87171';
+  }
+
+  // إنشاء صندوق النتيجة
+  const resultBox = document.createElement('div');
+  resultBox.className = 'final-result-box';
+  resultBox.style.cssText = `
+    margin: 30px auto;
+    padding: 25px;
+    background: #0d1117;
+    border: 2px solid ${color};
+    border-radius: 16px;
+    text-align: center;
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    animation: fadeIn 0.5s ease;
+  `;
+
+  resultBox.innerHTML = `
+    <div style="font-size: 50px; margin-bottom: 10px;">${emoji}</div>
+    <div style="font-size: 22px; font-weight: bold; color: ${color}; margin-bottom: 8px;">
+      ${message}
+    </div>
+    <div style="font-size: 40px; font-weight: bold; color: white; margin: 10px 0;">
+      ${percentage}%
+    </div>
+    <div style="color: #8b949e; font-size: 14px;">
+      أجبت <span style="color:#4ade80; font-weight:bold;">${correctCount}</span> 
+      صح من أصل 
+      <span style="color:white; font-weight:bold;">${total}</span> سؤال
+      &nbsp;|&nbsp;
+      أخطأت <span style="color:#f87171; font-weight:bold;">${total - correctCount}</span>
+    </div>
+  `;
+
+  // إضافة النتيجة في نهاية القسم
+  sectionEl.appendChild(resultBox);
+
+  // التمرير للنتيجة
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
   </script>
 
 </body>
